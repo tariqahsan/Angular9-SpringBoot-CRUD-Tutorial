@@ -36,7 +36,7 @@ export class CreateEmployeeComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    this.save();    
+    this.save();
   }
 
   gotoList() {
