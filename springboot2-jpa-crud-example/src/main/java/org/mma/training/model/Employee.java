@@ -15,17 +15,20 @@ public class Employee {
 	private String firstName;
 	private String lastName;
 	private String emailId;
+	private boolean active;
 	
 	public Employee() {
 		
 	}
-	
-	public Employee(String firstName, String lastName, String emailId) {
+
+	public Employee(String firstName, String lastName, String emailId, boolean active) {
+		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailId = emailId;
+		this.active = active;
 	}
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public long getId() {
@@ -50,6 +53,7 @@ public class Employee {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
 	
 	@Column(name = "email_address", nullable = false)
 	public String getEmailId() {
@@ -62,7 +66,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", emailId=" + emailId
-				+ "]";
+				+ ", active=" + active + "]";
 	}
 	
 }
